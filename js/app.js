@@ -1,5 +1,14 @@
 $(document).ready(function() {
-  for (var i=1; i<101; i++) {
+  var n = NaN;
+  while (isNaN(n) || n<1) {
+    var ns = prompt("Enter a value >= 1:");
+    n = parseInt(ns);
+  }
+  runFizzBuzz(n);
+});
+
+function runFizzBuzz(n) {
+  for (var i=1; i<=n; i++) {
     var out;
     if (i%3==0 && i%5==0) out = "fizz buzz";
     else if (i%3==0) out = "fizz";
@@ -7,4 +16,4 @@ $(document).ready(function() {
     else out = i;
     $('body').append('<p>'+out+'</p>');
   }
-});
+}
